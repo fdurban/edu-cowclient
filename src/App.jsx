@@ -1,12 +1,10 @@
-import Navigation from './components/Navigation'
+import Navigation from './components/Navigation/Navigation'
 import AppRoutes from './routes/AppRoutes'
 
 function App() {
 	return (
 		<>
-			<div className='flex'>
-				<Navigation />
-			</div>
+			<Navigation />
 			<AppRoutes />
 		</>
 	)

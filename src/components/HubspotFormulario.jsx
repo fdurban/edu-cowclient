@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import accountHandler from '../services/hubspot/hubspot.services'
+import axios from 'axios'
 
 const FormularioHubspot = () => {
 	const [email, setEmail] = useState('')
+	const [firstName, setFirstName] = useState('')
+	const [lastName, setlastName] = useState('')
 	const [enviado, setEnviado] = useState(false)
 	const [error, setError] = useState(null)
 
@@ -10,9 +12,11 @@ const FormularioHubspot = () => {
 		e.preventDefault()
 
 		try {
-			const response = await accountHandler.postData({ email })
-
-			if (response && response.status === 'success') {
+			const response = await axios.post(
+				'http://localhost:3000/create-contact',
+				{ email },
+			)
+			if (response && response.data) {
 				setEnviado(true)
 				setEmail('')
 			} else {
@@ -29,7 +33,7 @@ const FormularioHubspot = () => {
 	}
 
 	return (
-		<div className='mt-2'>
+		<div className='mt-2 shadow-lg rounded-md p-4'>
 			<h2>Rellena tus datos</h2>
 			{error && <p>{error}</p>}
 			{enviado ? (
@@ -46,6 +50,26 @@ const FormularioHubspot = () => {
 							placeholder='Correo'
 						/>
 					</label>
+					<label>
+						<input
+							className='text-center rounded-md'
+							type='name'
+							value={firstName}
+							onChange={e => setFirstName(e.target.value)}
+							required
+							placeholder='Nombre'
+						/>
+					</label>
+					{/* <label>
+						<input
+							className='text-center rounded-md'
+							type='email'
+							value={email}
+							onChange={e => setEmail(e.target.value)}
+							required
+							placeholder='Apellidos'
+						/>
+					</label> */}
 					<button
 						type='submit'
 						className='bg-cyan-700 py-2 rounded text-white hover:bg-cyan-600 mt-4'>
