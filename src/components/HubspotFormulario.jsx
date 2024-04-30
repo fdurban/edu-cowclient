@@ -33,7 +33,7 @@ const FormularioHubspot = () => {
 	}
 
 	return (
-		<div className='mt-2 shadow-lg rounded-md p-4'>
+		<div className='animate-slideInRight bg-white'>
 			<h2>Rellena tus datos</h2>
 			{error && <p>{error}</p>}
 			{enviado ? (
@@ -42,7 +42,7 @@ const FormularioHubspot = () => {
 				<form onSubmit={handleSubmit} className='flex flex-col'>
 					<label>
 						<input
-							className='text-center rounded-md'
+							className='rounded-md text-center'
 							type='email'
 							value={email}
 							onChange={e => setEmail(e.target.value)}
@@ -52,7 +52,7 @@ const FormularioHubspot = () => {
 					</label>
 					<label>
 						<input
-							className='text-center rounded-md'
+							className='rounded-md text-center'
 							type='name'
 							value={firstName}
 							onChange={e => setFirstName(e.target.value)}
@@ -72,7 +72,7 @@ const FormularioHubspot = () => {
 					</label> */}
 					<button
 						type='submit'
-						className='bg-cyan-700 py-2 rounded text-white hover:bg-cyan-600 mt-4'>
+						className='mt-4 rounded bg-cyan-700 py-2 text-white hover:bg-cyan-600'>
 						Enviar
 					</button>
 				</form>

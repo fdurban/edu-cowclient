@@ -1,79 +1,54 @@
-import background from '../assets/backgroundnubes.webp'
 import FormularioHubspot from '../components/HubspotFormulario'
 import { useState } from 'react'
 
 const HomePage = () => {
 	const [formularioVisible, setFormularioVisible] = useState(false)
+	const [showAdditionalText, setShowAdditionalText] = useState(false)
 
 	const toggleFormulario = () => {
 		setFormularioVisible(!formularioVisible)
 	}
-	const cerrarFormulario = () => {
-		setFormularioVisible(false)
-	}
-
-	const [showAdditionalText, setShowAdditionalText] = useState(false)
 
 	return (
 		<div
-			className='h-screen flex flex-col justify-center items-center'
+			className='flex h-screen flex-col'
 			style={{
-				backgroundImage: `url(${background})`,
-				backgroundSize: 'cover',
-				backgroundPosition: 'center',
+				backgroundColor: '#87d3f5',
 			}}>
 			<div
-				className={`fixed inset-0 bg-black bg-opacity-50 z-10 ${formularioVisible ? 'block' : 'hidden'}`}
-				onClick={cerrarFormulario}></div>
-			<div
-				className={`transform transition-transform z-20 ${formularioVisible ? 'translate-y-0' : 'translate-y-full'}`}>
-				{formularioVisible && (
-					<div className='relative'>
-						<button
-							onClick={toggleFormulario}
-							className='absolute top-0 right-0 mt-2 mr-2 text-white hover:text-gray-400'>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								className='h-6 w-6'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth='2'
-									d='M6 18L18 6M6 6l12 12'
-								/>
-							</svg>
-						</button>
-						<FormularioHubspot />
-					</div>
-				)}
-			</div>
-			<button
-				onClick={toggleFormulario}
-				className='bg-fuchsia-400 rounded-full rounded-md px-4 absolute bottom-4 right-4'>
-				<div className='flex justify-center items-center py-4'>
-					<div className='w-5 h-12 bg-black rounded-full mx-1'></div>
-					<div className='w-5 h-12 bg-black rounded-full mx-1'></div>
-				</div>
+				className={` ${formularioVisible ? 'block' : 'hidden'}`}
+				onClick={() => setFormularioVisible(false)}></div>
+
+			<button onClick={toggleFormulario}>
+				<h1 className='absolute bottom-4 right-4 rounded-full bg-fuchsia-400 px-4'>
+					Contacta con nosotros
+				</h1>
 			</button>
+
+			{formularioVisible && (
+				<>
+					<FormularioHubspot />
+				</>
+			)}
+
 			<h1
 				className={
 					showAdditionalText
-						? 'animate-moveUp text-white text-4xl font-bold absolute bottom-5 left-20'
-						: 'text-white text-4xl font-bold absolute bottom-5 left-20'
+						? 'absolute bottom-20 left-44 animate-moveUp text-3xl sm:bottom-36 sm:text-4xl md:bottom-16 md:text-5xl lg:text-7xl xl:text-7xl'
+						: 'absolute bottom-20 left-44 text-3xl sm:bottom-36 sm:text-4xl md:bottom-16 md:text-5xl lg:text-7xl xl:text-7xl'
 				}
 				onMouseEnter={() => setShowAdditionalText(true)}
 				onMouseLeave={() => setShowAdditionalText(false)}>
-				QUÉ ES LA ECONOMÍA?
+				QUÉ ES LA
+				<br />
+				<span className={'text-violet-500'}>ECONOMÍA?</span>
 			</h1>
 
 			<h5
 				className={
 					showAdditionalText
-						? 'animate-fadeDown text-white absolute bottom-5 left-20 opacity-100'
-						: 'opacity-0  text-white absolute bottom-5 left-20'
+						? 'absolute bottom-14 left-44 animate-fadeDown overflow-hidden whitespace-normal text-sm text-black opacity-100 sm:text-3xl md:bottom-10 md:animate-typing md:whitespace-nowrap lg:whitespace-nowrap'
+						: ' opacity-0'
 				}>
 				Ciencia que estudia satisfacer necesidades ilimitadas con recursos
 				limitados
