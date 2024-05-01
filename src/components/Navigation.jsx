@@ -1,7 +1,7 @@
 const Navigation = () => {
 	return (
 		<>
-			<nav className='absolute flex h-screen flex-col justify-between bg-black shadow-md'>
+			<nav className='flex w-fit flex-col justify-between bg-black shadow-md'>
 				<div className='mb-10 mt-10'>
 					<a href='#'>
 						<img

@@ -4,12 +4,7 @@ export default {
 		extend: {
 			colors: {
 				customColor: '#782c0a',
-			},
-			width: {
-				'757px': '757px',
-			},
-			height: {
-				'224px': '224px',
+				bg: '#87d3f5',
 			},
 			keyframes: {
 				fadeDown: {
@@ -50,8 +45,8 @@ export default {
 					to: { transform: 'translateX(0%)' },
 				},
 				slideOutRight: {
-					from: { transform: 'translateX(0%)' },
-					to: { transform: 'translateX(100%)' },
+					from: { transform: 'translateX(500%)' },
+					to: { transform: 'translateX(1000%)' },
 				},
 			},
 			animation: {

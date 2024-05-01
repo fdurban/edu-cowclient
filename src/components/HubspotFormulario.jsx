@@ -33,7 +33,7 @@ const FormularioHubspot = () => {
 	}
 
 	return (
-		<div className='animate-slideInRight bg-white'>
+		<div className='flex w-fit animate-slideInRight flex-col items-center rounded-md border-solid bg-white'>
 			<h2>Rellena tus datos</h2>
 			{error && <p>{error}</p>}
 			{enviado ? (
