@@ -1,46 +1,32 @@
-import FormularioHubspot from '../components/HubspotFormulario'
-import { useState } from 'react'
-import vaca from '../../public/vaca1.png'
+import HomeCard from '../components/HomeCard'
+import { carruselData } from '../data/data'
 
 const HomePage = () => {
-	const [formularioVisible, setFormularioVisible] = useState(false)
-	const [showAdditionalText, setShowAdditionalText] = useState(false)
-
-	const toggleFormulario = () => {
-		setFormularioVisible(!formularioVisible)
-	}
+	const carrusel = [...carruselData]
 
 	return (
-		<div className='bg-bg flex flex-col justify-between'>
-			<img src={vaca} alt='' className='h-2/5 w-2/5 self-center' />
-			<div className='flex justify-between'>
-				<div
-					className=' text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-7xl'
-					onMouseEnter={() => setShowAdditionalText(true)}
-					onMouseLeave={() => setShowAdditionalText(false)}>
-					<p>QUÉ ES LA</p>
-					<p className='text-violet-500'>ECONOMÍA?</p>
-				</div>
-
-				<div className='text-sm text-black'>
-					{showAdditionalText && (
-						<p className='animate-fadeDown'>
-							Ciencia que estudia satisfacer necesidades ilimitadas con recursos
-							limitados
-						</p>
-					)}
-				</div>
-				<div>
-					<button
-						onClick={toggleFormulario}
-						className='rounded-full bg-fuchsia-400 px-4'>
-						Contacta con nosotros
-					</button>
-
-					{formularioVisible && <FormularioHubspot />}
-				</div>
+		<>
+			<div className='flex h-full items-center justify-center'>
+				<img
+					src='/vacamascot.png'
+					alt='Macosta vaca'
+					className='h-[365px] w-[650px] xl:block xl:h-[365px] xl:w-[650px]'
+				/>
 			</div>
-		</div>
+			<div className='flex h-full items-center overflow-y-auto'>
+				{carrusel.map((data, index) => (
+					<HomeCard data={data} key={index} />
+				))}
+			</div>
+			<center className='mt-4 text-2xl'>
+				NUESTROS PARTNERS SON EMPRESAS LÍDERES
+			</center>
+			<img
+				src='/collablogos.png'
+				className='my-4 h-[60px] w-[1200px] object-cover'
+				alt=''
+			/>
+		</>
 	)
 }
 

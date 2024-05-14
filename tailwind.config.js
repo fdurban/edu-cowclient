@@ -48,6 +48,14 @@ export default {
 					from: { transform: 'translateX(500%)' },
 					to: { transform: 'translateX(1000%)' },
 				},
+				scroll: {
+					'0%': {
+						transform: 'translateX(0)',
+					},
+					'100%': {
+						transform: 'translateX(calc(-400px * 5 - 0.5rem * 10))',
+					},
+				},
 			},
 			animation: {
 				fadeDown: 'fadeDown 0.5s ease-out forwards',
@@ -55,8 +63,9 @@ export default {
 				moveUp: 'moveUp 0.5s ease-out forwards',
 				moveDown: 'moveDown 0.5s ease-out forwards',
 				typing: 'typing 5s steps(65), blink .7s infinite',
-				slideInRight: 'slideInRight 0.5s forwards',
+				slideInRight: 'slideInRight 3s ease-out forwards',
 				slideOutRight: 'slideOutRight 0.5s forwards',
+				scroll: 'scroll 13s linear infinite;',
 			},
 		},
 	},

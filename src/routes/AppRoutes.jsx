@@ -5,6 +5,7 @@ import CoursesPage from '../pages/CoursesPage'
 import LoginPage from '../pages/LoginPage'
 import SignUpPage from '../pages/SignUpPage'
 import MethodologyPage from '../pages/MethodologyPage'
+import EconomyIPage from '../pages/EconomyIPage'
 
 const AppRoutes = () => {
 	return (
@@ -15,7 +16,7 @@ const AppRoutes = () => {
 			<Route path='/login' element={<LoginPage />} />
 			<Route path='/signup' element={<SignUpPage />} />
 			<Route path='/methodology' element={<MethodologyPage />} />
-			<Route path='/' element={<HomePage />} />
+			<Route path='/economyi' element={<EconomyIPage />} />
 			<Route path='/' element={<HomePage />} />
 			<Route path='/' element={<HomePage />} />
 			<Route path='/' element={<HomePage />} />
