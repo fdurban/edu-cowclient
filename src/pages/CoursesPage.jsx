@@ -69,7 +69,7 @@ const CoursesPage = () => {
 			</div>
 			<div className='mx-6 mt-5 flex justify-around overflow-x-auto overflow-y-hidden'>
 				{titles.map((course, index) => (
-					<Link to={`/${course.link}`} key=''>
+					<Link to={`/${course.link}`} key={`${index}`}>
 						<div
 							key={index}
 							className='relative ml-5 h-80 w-80 flex-none rounded-lg bg-cover bg-center shadow-2xl'

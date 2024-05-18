@@ -1,5 +1,6 @@
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+	darkMode: 'class',
 	theme: {
 		extend: {
 			colors: {
@@ -48,13 +49,13 @@ export default {
 					from: { transform: 'translateX(500%)' },
 					to: { transform: 'translateX(1000%)' },
 				},
-				scroll: {
-					'0%': {
-						transform: 'translateX(0)',
-					},
-					'100%': {
-						transform: 'translateX(calc(-400px * 5 - 0.5rem * 10))',
-					},
+				slideRight: {
+					'0%': { transform: 'translateX(100%)' },
+					'100%': { transform: 'translateX(0%)' },
+				},
+				slideLeft: {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(0%)' },
 				},
 			},
 			animation: {
@@ -66,6 +67,8 @@ export default {
 				slideInRight: 'slideInRight 3s ease-out forwards',
 				slideOutRight: 'slideOutRight 0.5s forwards',
 				scroll: 'scroll 13s linear infinite;',
+				slideLeft: 'slideLeft 0.5s ease',
+				slideRight: 'slideRight 0.5s ease',
 			},
 		},
 	},
