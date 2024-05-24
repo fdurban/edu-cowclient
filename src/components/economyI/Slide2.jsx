@@ -56,18 +56,17 @@ const Slide2 = () => {
 	const [description, setDescription] = useState(data[0].description)
 
 	return (
-		<div className='flex h-full flex-col justify-center xl:flex-row-reverse'>
-			<div className='ml-4 flex flex-col justify-end'>
-				<h1 className='flex flex-row items-start text-center text-2xl font-bold xl:flex-col xl:text-5xl'>
+		<div className='flex w-screen flex-col justify-center xl:flex-row-reverse'>
+			<div className='flex flex-col items-center xl:items-start xl:justify-end'>
+				<h1 className='flex text-2xl font-bold xl:flex-col xl:text-5xl'>
 					<span className='font-lalezar mr-2 text-[#d988d9] xl:mx-0'>
 						CONCEPTOS
 					</span>
 					<span className='font-lalezar dark:text-white'> BÁSICOS</span>
-					<span className='font-lalezar hidden xl:block dark:text-white'>
+					<span className='font-lalezar hidden dark:text-white xl:block'>
 						DE ECONOMÍA
 					</span>
 				</h1>
-
 				<div className='flex flex-col items-center text-sm xl:grid xl:grid-cols-2 xl:flex-row xl:items-end xl:justify-end'>
 					{data.map((value, index) => (
 						<p

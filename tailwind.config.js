@@ -41,22 +41,6 @@ export default {
 						borderColor: 'white',
 					},
 				},
-				slideRightIn: {
-					'0%': { transform: 'translateX(100%)' },
-					'100%': { transform: 'translateX(0)' },
-				},
-				slideRightOut: {
-					'0%': { transform: 'translateX(0)' },
-					'100%': { transform: 'translateX(-100%)' },
-				},
-				slideLeftIn: {
-					'0%': { transform: 'translateX(-100%)' },
-					'100%': { transform: 'translateX(0)' },
-				},
-				slideLeftOut: {
-					'0%': { transform: 'translateX(0)' },
-					'100%': { transform: 'translateX(100%)' },
-				},
 			},
 			animation: {
 				fadeDown: 'fadeDown 0.5s ease-out forwards',
@@ -65,10 +49,6 @@ export default {
 				moveDown: 'moveDown 0.5s ease-out forwards',
 				typing: 'typing 5s steps(65), blink .7s infinite',
 				scroll: 'scroll 13s linear infinite;',
-				slideRightIn: 'slideRightIn 0.5s ease-in-out',
-				slideRightOut: 'slideRightOut 0.5s ease-in-out',
-				slideLeftIn: 'slideLeftIn 0.5s ease-in-out',
-				slideLeftOut: 'slideLeftOut 0.5s ease-in-out',
 			},
 		},
 	},

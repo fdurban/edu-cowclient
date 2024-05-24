@@ -4,7 +4,7 @@ const Slide1 = () => {
 	const [showAdditionalText, setShowAdditionalText] = useState(false)
 
 	return (
-		<div className='ml-4 mt-96'>
+		<div className='ml-4 mt-96 w-screen'>
 			<div
 				className='w-fit text-6xl xl:text-7xl'
 				onMouseEnter={() => setShowAdditionalText(true)}
