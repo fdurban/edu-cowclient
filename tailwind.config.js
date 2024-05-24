@@ -41,21 +41,21 @@ export default {
 						borderColor: 'white',
 					},
 				},
-				slideInRight: {
-					from: { transform: 'translateX(100%)' },
-					to: { transform: 'translateX(0%)' },
-				},
-				slideOutRight: {
-					from: { transform: 'translateX(500%)' },
-					to: { transform: 'translateX(1000%)' },
-				},
-				slideRight: {
+				slideRightIn: {
 					'0%': { transform: 'translateX(100%)' },
-					'100%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(0)' },
 				},
-				slideLeft: {
+				slideRightOut: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' },
+				},
+				slideLeftIn: {
 					'0%': { transform: 'translateX(-100%)' },
-					'100%': { transform: 'translateX(0%)' },
+					'100%': { transform: 'translateX(0)' },
+				},
+				slideLeftOut: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(100%)' },
 				},
 			},
 			animation: {
@@ -64,11 +64,11 @@ export default {
 				moveUp: 'moveUp 0.5s ease-out forwards',
 				moveDown: 'moveDown 0.5s ease-out forwards',
 				typing: 'typing 5s steps(65), blink .7s infinite',
-				slideInRight: 'slideInRight 3s ease-out forwards',
-				slideOutRight: 'slideOutRight 0.5s forwards',
 				scroll: 'scroll 13s linear infinite;',
-				slideLeft: 'slideLeft 0.5s ease',
-				slideRight: 'slideRight 0.5s ease',
+				slideRightIn: 'slideRightIn 0.5s ease-in-out',
+				slideRightOut: 'slideRightOut 0.5s ease-in-out',
+				slideLeftIn: 'slideLeftIn 0.5s ease-in-out',
+				slideLeftOut: 'slideLeftOut 0.5s ease-in-out',
 			},
 		},
 	},

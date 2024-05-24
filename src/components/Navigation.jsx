@@ -5,8 +5,8 @@ const Navigation = ({ navbarVisible, toggleNavbar }) => {
 	const { theme, switchTheme } = useContext(ThemeContext)
 	return (
 		<nav
-			className={`${navbarVisible ? 'fixed' : 'hidden xl:sticky xl:top-0 xl:flex'} animate-slideLeft z-10 h-full w-full bg-white xl:static xl:flex xl:h-fit xl:animate-none xl:justify-between xl:py-4 dark:bg-black`}>
-			<div className='mt-2 flex justify-between xl:mt-0'>
+			className={`${navbarVisible ? 'fixed' : 'hidden xl:sticky xl:top-0 xl:flex'} animate-slideLeft z-10 h-full w-full items-center bg-white xl:static xl:flex xl:h-fit xl:animate-none xl:justify-between xl:py-4 dark:bg-black`}>
+			<div className='mx-4 my-4 flex items-center justify-between xl:mx-0 xl:my-0 xl:mt-0'>
 				<Link to='/' className='ml-2'>
 					<img
 						src={
@@ -16,21 +16,21 @@ const Navigation = ({ navbarVisible, toggleNavbar }) => {
 						className='h-[30px] w-[158px]'
 					/>
 				</Link>
+				<button
+					className='ml-2 rounded-full bg-gray-300 p-2'
+					onClick={switchTheme}>
+					{theme === 'light' ? '🌛' : '🌞'}
+				</button>
 			</div>
-			<button
-				className='ml-2 rounded-full bg-gray-300 p-2'
-				onClick={switchTheme}>
-				{theme === 'light' ? '🌛' : '🌞'}
-			</button>
 			<div className='mr-4 flex justify-end xl:items-end'>
-				<ul className='mt-16 flex w-fit flex-col items-end text-lg xl:mt-0 xl:mt-1 xl:flex-row'>
+				<ul className='mt-16 flex w-fit flex-col items-end text-lg xl:mb-1 xl:mt-0 xl:flex-row'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'
 						viewBox='0 0 24 24'
 						strokeWidth={1.5}
-						stroke='currentColor'
-						className='h-6 w-6 pb-8 xl:hidden'
+						stroke='white'
+						className='h-6 w-6 xl:hidden'
 						onClick={toggleNavbar}>
 						<path
 							strokeLinecap='round'
@@ -67,7 +67,7 @@ const Navigation = ({ navbarVisible, toggleNavbar }) => {
 									fill='none'
 									viewBox='0 0 24 24'
 									strokeWidth={3}
-									stroke='currentColor'
+									stroke={theme === 'light' ? 'black' : 'white'}
 									className='ml-1 h-4 w-4'>
 									<path
 										strokeLinecap='round'
@@ -84,6 +84,7 @@ const Navigation = ({ navbarVisible, toggleNavbar }) => {
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									width='24'
+									stroke={theme === 'light' ? 'black' : 'white'}
 									height='24'
 									viewBox='0 0 24 24'>
 									<path d='M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10 10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zm-5.106 9.772c.897-1.32 2.393-2.2 4.106-2.2h2c1.714 0 3.209.88 4.106 2.2C15.828 18.14 14.015 19 12 19s-3.828-.86-5.106-2.228z'></path>

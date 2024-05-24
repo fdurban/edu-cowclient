@@ -14,11 +14,15 @@ const HomePage = () => {
 	return (
 		<div className='h-full bg-white dark:bg-black'>
 			<div className='items flex flex-col items-center justify-around'>
-				<img src='/clouds.png' alt='' className=' h-[317px] w-[948px] ' />
+				<img
+					src='/clouds.png'
+					alt=''
+					className='hidden h-[317px] w-[948px] xl:block '
+				/>
 				<img
 					src='/vacamascot.png'
 					alt='Macosta vaca'
-					className='absolute h-[365px] w-[650px] xl:block xl:h-[354px] xl:w-[765px]'
+					className='hidden h-[365px] w-[650px] xl:absolute xl:block xl:h-[354px] xl:w-[765px]'
 				/>
 			</div>
 			<div className='mt-4 flex flex-col justify-around overflow-y-auto xl:flex-row'>
@@ -26,16 +30,40 @@ const HomePage = () => {
 					<HomeCard data={data} key={index} />
 				))}
 			</div>
-			<center className='xl:text-l text-md mt-4'>
+			<center className='xl:text-l text-md mt-4 dark:text-white'>
 				NUESTROS PARTNERS SON EMPRESAS LÍDERES
 			</center>
-			<div className='flex h-6  items-center justify-around'>
-				<img src='/logos/hp.png' alt='' className='w-10' />
-				<img src='/logos/kluwer.png' alt='' className='w-10' />
-				<img src=' /logos/kpmg.png' alt='' className='w-10' />
-				<img src='/logos/microsoft.png' alt='' className='w-10' />
-				<img src='/logos/nike.png' alt='' className='w-10' />
-				<img src='/logos/soundcloud.png' alt='' className='w-10' />
+			<div className='mt-4 flex flex-wrap items-center justify-around '>
+				<img
+					src='/logos/hp.png'
+					alt='HP Logo'
+					className='w-20 md:w-24 lg:w-28 xl:w-32'
+				/>
+				<img
+					src='/logos/kluwer.png'
+					alt='Kluwer Logo'
+					className='w-20 md:w-24 lg:w-28 xl:w-32'
+				/>
+				<img
+					src='/logos/kpmg.png'
+					alt='KPMG Logo'
+					className='w-20 md:w-24 lg:w-28 xl:w-32'
+				/>
+				<img
+					src='/logos/microsoft.png'
+					alt='Microsoft Logo'
+					className='w-20 md:w-24 lg:w-28 xl:w-32'
+				/>
+				<img
+					src='/logos/nike.png'
+					alt='Nike Logo'
+					className='w-20 md:w-24 lg:w-28 xl:w-32'
+				/>
+				<img
+					src='/logos/soundcloud.png'
+					alt='Soundcloud Logo'
+					className='w-20 md:w-24 lg:w-28 xl:w-32'
+				/>
 			</div>
 
 			<svg

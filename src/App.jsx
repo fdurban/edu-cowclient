@@ -1,22 +1,23 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Navigation from './components/Navigation'
 import AppRoutes from './routes/AppRoutes'
-
+import { ThemeContext } from './contexts/theme.context'
 function App() {
 	const [navbarVisible, setNavbarVisible] = useState(false)
 
 	function toggleNavbar() {
 		setNavbarVisible(!navbarVisible)
 	}
+	const { theme } = useContext(ThemeContext)
 
 	return (
 		<div className='flex min-h-screen flex-col dark:bg-black'>
 			<Navigation navbarVisible={navbarVisible} toggleNavbar={toggleNavbar} />
 			<div className='flex justify-between xl:hidden'>
 				<img
-					src='/educowlogo.png'
+					src={theme === 'light' ? '/educowlogo.png' : '/logoeducowblanco.png'}
 					alt=''
-					className=' h-[30px] w-[158px] xl:hidden'
+					className='h-[30px] w-[158px]'
 				/>
 				<div className={`xs:hidden ${navbarVisible ? 'hidden' : 'block'}`}>
 					<button

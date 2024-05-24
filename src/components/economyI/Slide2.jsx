@@ -1,64 +1,101 @@
-import vacamascot from '../../../public/vacamascot2.jpg'
+import { useState } from 'react'
 const Slide2 = () => {
-	return (
-		<div className='flex h-full flex-col items-center justify-center'>
-			<div className='flex flex-col xl:flex-row-reverse'>
-				<div className='ml-4 flex flex-col'>
-					<h1 className='mt-6 flex flex-row items-start text-center text-2xl font-bold xl:flex-col xl:text-5xl'>
-						<span className='font-lalezar  mr-2 text-[#d988d9] xl:mx-0'>
-							CONCEPTOS
-						</span>
-						<h1 className='font-lalezar'> BÁSICOS</h1>
-						<span className='font-lalezar hidden xl:block'>DE ECONOMÍA</span>
-					</h1>
+	const data = [
+		{
+			name: 'NECESIDAD',
+			description:
+				'Deseo o carencia de bienes o servicios esenciales para la vida o el bienestar.',
+		},
+		{
+			name: 'RECURSOS',
+			description:
+				'Medios disponibles para satisfacer necesidades, incluyendo materiales, humanos y financieros.',
+		},
+		{
+			name: 'BIENES Y SERVICIOS',
+			description:
+				'Productos tangibles e intangibles que satisfacen necesidades y deseos.',
+		},
+		{
+			name: 'CONSUMO-GASTO',
+			description:
+				'Uso de bienes y servicios para satisfacer necesidades, generando un gasto económico.',
+		},
+		{
+			name: 'AHORRO',
+			description:
+				'Parte del ingreso no destinada al consumo y reservada para necesidades futuras.',
+		},
+		{
+			name: 'INVERSIÓN',
+			description:
+				'Uso de recursos financieros para generar beneficios o ganancias a largo plazo.',
+		},
+		{
+			name: 'OFERTA',
+			description:
+				'Cantidad de bienes y servicios que los productores están dispuestos a vender a diferentes precios.',
+		},
+		{
+			name: 'DEMANDA',
+			description:
+				'Cantidad de bienes y servicios que los consumidores están dispuestos a comprar a diferentes precios.',
+		},
+		{
+			name: 'PRECIO',
+			description:
+				'Cantidad de dinero necesaria para adquirir un bien o servicio.',
+		},
+		{
+			name: 'COSTE DE OPORTUNIDAD',
+			description:
+				'Valor de la mejor alternativa no elegida al tomar una decisión.',
+		},
+	]
+	const [title, setTitle] = useState('NECESIDAD')
+	const [description, setDescription] = useState(data[0].description)
 
-					<div className='flex flex-col xl:grid xl:grid-cols-2 xl:flex-row'>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center text-white hover:bg-[#d988d9] xl:mr-4'>
-							NECESIDAD
+	return (
+		<div className='flex h-full flex-col justify-center xl:flex-row-reverse'>
+			<div className='ml-4 flex flex-col justify-end'>
+				<h1 className='flex flex-row items-start text-center text-2xl font-bold xl:flex-col xl:text-5xl'>
+					<span className='font-lalezar mr-2 text-[#d988d9] xl:mx-0'>
+						CONCEPTOS
+					</span>
+					<span className='font-lalezar dark:text-white'> BÁSICOS</span>
+					<span className='font-lalezar hidden xl:block dark:text-white'>
+						DE ECONOMÍA
+					</span>
+				</h1>
+
+				<div className='flex flex-col items-center text-sm xl:grid xl:grid-cols-2 xl:flex-row xl:items-end xl:justify-end'>
+					{data.map((value, index) => (
+						<p
+							key={index}
+							className='mt-3 w-48 break-words rounded-lg bg-[#657ff0] py-1 text-center text-white hover:bg-[#d988d9] xl:mr-4'
+							onMouseEnter={() => {
+								setTitle(value.name)
+								setDescription(value.description)
+							}}>
+							{value.name}
 						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center text-white hover:bg-[#d988d9] xl:mr-4'>
-							RECURSOS
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center text-white hover:bg-[#d988d9] xl:mr-4'>
-							BIENES Y SERVICIOS
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center text-white hover:bg-[#d988d9] xl:mr-4'>
-							CONSUMO-GASTO
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center text-white hover:bg-[#d988d9] xl:mr-4'>
-							AHORRO
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center text-white hover:bg-[#d988d9] xl:mr-4'>
-							INVERSIÓN
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center  text-white hover:bg-[#d988d9] xl:mr-4'>
-							OFERTA
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center  text-white hover:bg-[#d988d9] xl:mr-4'>
-							DEMANDA
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center  text-white hover:bg-[#d988d9] xl:mr-4'>
-							PRECIO
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center text-white  hover:bg-[#d988d9] xl:mr-4'>
-							COSTE DE OPORTUNIDAD
-						</p>
-						<p className='mt-3 rounded-lg bg-[#657ff0] py-2 text-center  text-white hover:bg-[#d988d9] xl:col-span-2 xl:mr-4 '>
-							DINERO
-						</p>
-					</div>
+					))}
+					<p className='mt-3 break-words rounded-lg bg-[#657ff0] py-1 text-center text-white hover:bg-[#d988d9] xl:col-span-2 xl:mr-4'>
+						DINERO
+					</p>
 				</div>
-				<div className='hidden  xl:flex xl:flex-col xl:items-center xl:justify-start'>
-					<img src={vacamascot} alt='' className='hidden h-56 w-56 xl:block' />
-					<div className='mt-2.5 flex h-52 w-80 flex-col items-center justify-center rounded-lg bg-black'>
-						<h1 className='text-white'>TITLE</h1>
-						<p className='text-center text-white'>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-							Repudiandae iusto ullam molestias possimus! Expedita voluptatibus,
-							natus eaque et, rerum debitis non inventore ipsam ut adipisci
-							quidem alias accusamus voluptates sapiente.
-						</p>
-					</div>
+			</div>
+			<div className='mb-8 hidden xl:flex xl:flex-col xl:items-center xl:justify-start'>
+				<img
+					src='/imagevaca2.png'
+					alt=''
+					className='hidden h-[70%] w-[70%] xl:block'
+				/>
+				<div className='flex h-52 w-80 flex-col items-center justify-center rounded-lg bg-black dark:bg-white'>
+					<h1 className='text-white dark:text-black'>{title}</h1>
+					<p className='text-center text-white dark:text-black'>
+						{description}
+					</p>
 				</div>
 			</div>
 		</div>
@@ -66,15 +103,3 @@ const Slide2 = () => {
 }
 
 export default Slide2
-
-{
-	/* <div className='hidden w-64 rounded-md bg-black text-white'>
-						<h1>TÍTULO</h1>
-						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum
-							voluptas ipsa quia soluta quo minima! Accusamus dolores, eaque,
-							culpa, eveniet neque sunt expedita doloribus qui placeat tempora
-							pariatur at nesciunt.
-						</p>
-					</div> */
-}
